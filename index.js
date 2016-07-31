@@ -1,5 +1,4 @@
 var alarm = require('./lib/alarm');
-var async = require('async');
 // alarm.create("aa", "* * * * * *", "echo aaa", function(){
 //   alarm.start();
 // });

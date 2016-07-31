@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>alarm</title>
+
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+  <body>
+    <ul>
+      <li>name: <input type='text' data-bind="value: name" /></li>
+      <li>time: <input type='text' data-bind="value: time" /></li>
+      <li>script:<textarea cols="50" rows="5" data-bind="value: script"></textarea></li>
+    </ul>
+
+    <button data-bind="click: create">submit</button>
+
+  </body>
+  <script type='text/javascript' src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script type='text/javascript' src="/bower_components/knockout/dist/knockout.js"></script>
+  <script type='text/javascript' src='/js/index.js'></script>
+</html>
