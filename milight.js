@@ -15,4 +15,4 @@ setInterval(function(){
     i ++;
     if(i === 100)process.exit(0);
   });
-}, 1000);
+}, 1000 * 60);
