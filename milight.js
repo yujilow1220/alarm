@@ -1,7 +1,7 @@
 var Milight = require("milight");
 
 var milight = new Milight({
-    host: "192.168.0.255",
+    host: "192.168.0.107",
     broadcast: true
 });
 var i = 0;
