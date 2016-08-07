@@ -14,6 +14,11 @@
 
     <button data-bind="click: create">submit</button>
 
+    <h3>Existing Alarms</h3>
+    <ul data-bind="foreach: alarms">
+      <li data-bind="text: name, click: $root.edit"></li>
+    </ul>
+
   </body>
   <script type='text/javascript' src="/bower_components/jquery/dist/jquery.min.js"></script>
   <script type='text/javascript' src="/bower_components/knockout/dist/knockout.js"></script>
