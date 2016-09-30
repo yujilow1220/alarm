@@ -1,18 +1,20 @@
-var Milight = require("milight");
+var Milight = require('node-milight-promise').MilightController;
+var commands = require('node-milight-promise').commands2;
 
-var milight = new Milight({
-    host: "192.168.0.107",
-    broadcast: true
-});
+var light = new Milight({
+        ip: "192.168.0.200",
+        delayBetweenCommands: 75,
+        commandRepeat: 2
+    }),
+zone = 2;
 var i = 0;
-// All zones on
-milight.zone(1).on();
-milight.zone(1).brightness(i);
 setInterval(function(){
   console.log('now brightness = ' + i);
-  milight.zone(1).brightness(i, function(err){
-
-    i ++;
-    if(i === 100)process.exit(0);
-  });
-}, 1000 * 60);
+  light.sendCommands(commands.white.brightUp());
+  light.sendCommands(commands.white.cooler());
+  if(i == 10){
+    light.close();
+    process.exit(0);
+  }
+  i++;
+}, 1000 * 60 * 5);
