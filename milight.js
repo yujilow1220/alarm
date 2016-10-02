@@ -8,10 +8,14 @@ var light = new Milight({
     }),
 zone = 2;
 var i = 0;
+light.sendCommands(commands.white.on(zone));
+for(var ii = 0; ii < 10; ii++){
+  light.sendCommands(commands.white.brightDown());
+  light.sendCommands(commands.white.cooler());
+}
 setInterval(function(){
   console.log('now brightness = ' + i);
   light.sendCommands(commands.white.brightUp());
-  light.sendCommands(commands.white.cooler());
   if(i == 10){
     light.close();
     process.exit(0);
